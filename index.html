@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arangar & Asociados — Estudio Contable · Lima, Perú</title>
+<meta name="description" content="Estudio contable, fiscal y legal especializado en MYPEs y holdings en Lima. Planes Starter, Growth, Pro y Premium. Diagnóstico gratuito.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1F3C;--navy2:#1B3A6B;--navy3:#0A1628;--gold:#C9982A;--gold2:#E8B84B;--goldl:#FDF3DC;--white:#FFFFFF;--off:#F4F6FA;--mid:#8898AA;--dark:#1A1A2E;--border:rgba(201,152,42,0.25);--shadow:0 8px 40px rgba(13,31,60,0.18)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy3);color:var(--white);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.lang-es .en{display:none}.lang-en .es{display:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:68px;background:rgba(10,22,40,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);transition:all 0.3s}
+nav.scrolled{height:58px;background:rgba(10,22,40,0.98)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;letter-spacing:0.04em;color:var(--white)}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{padding:0.45rem 1.2rem;border:1px solid var(--gold);color:var(--gold)!important;border-radius:2px;transition:all 0.2s!important}
+.nav-cta:hover{background:var(--gold)!important;color:var(--navy)!important}
+.lang-btn{font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;padding:0.3rem 0.7rem;border:1px solid var(--border);border-radius:2px;color:var(--mid);background:none;transition:all 0.2s}
+.lang-btn:hover{border-color:var(--gold);color:var(--gold)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:all 0.3s}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:rgba(10,22,40,0.98);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:1.5rem;font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--white);transition:color 0.2s}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-close{position:absolute;top:1.5rem;right:5vw;font-size:2rem;cursor:pointer;color:var(--mid)}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 5vw 80px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(27,58,107,0.35) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(201,152,42,0.08) 0%,transparent 60%),linear-gradient(160deg,#0A1628 0%,#0D1F3C 50%,#071020 100%)}
+.hero-grid{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px);background-size:60px 60px}
+.hero-content{position:relative;z-index:1;max-width:700px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.8rem}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.2rem);font-weight:700;line-height:1.05;letter-spacing:-0.01em;margin-bottom:1.6rem}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:1.08rem;font-weight:300;line-height:1.7;color:rgba(255,255,255,0.7);max-width:560px;margin-bottom:2.8rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-gold{padding:0.85rem 2rem;background:var(--gold);color:var(--navy);font-size:0.82rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:all 0.25s;border:none;cursor:pointer;display:inline-block}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(201,152,42,0.3)}
+.btn-outline{padding:0.85rem 2rem;background:transparent;color:var(--white);font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.25);border-radius:2px;transition:all 0.25s;cursor:pointer;display:inline-block}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,0.06)}
+.hero-stats{position:relative;z-index:1;margin-top:5rem;display:flex;gap:3rem;flex-wrap:wrap}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1}
+.stat-label{font-size:0.78rem;color:var(--mid);letter-spacing:0.06em;margin-top:0.3rem}
+.hero-badge{position:absolute;right:5vw;top:50%;transform:translateY(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+.badge-card{background:rgba(27,58,107,0.4);border:1px solid var(--border);border-radius:4px;padding:1.4rem 1.8rem;backdrop-filter:blur(8px);min-width:200px;transition:transform 0.3s}
+.badge-card:hover{transform:translateY(-3px)}
+.badge-icon{font-size:1.6rem;margin-bottom:0.6rem}
+.badge-title{font-size:0.82rem;font-weight:600;letter-spacing:0.06em;color:var(--gold)}
+.badge-text{font-size:0.75rem;color:var(--mid);margin-top:0.3rem;line-height:1.5}
+section{padding:100px 5vw}
+.section-label{font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.7rem;margin-bottom:1rem}
+.section-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.1;margin-bottom:1.2rem}
+.section-sub{font-size:1rem;color:rgba(255,255,255,0.6);line-height:1.7;max-width:560px}
+#servicios{background:var(--navy3)}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:4rem;border:1px solid var(--border)}
+.service-item{padding:2.4rem 2.8rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background 0.3s}
+.service-item:nth-child(2n){border-right:none}
+.service-item:nth-last-child(-n+2){border-bottom:none}
+.service-item:hover{background:rgba(27,58,107,0.2)}
+.service-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:rgba(201,152,42,0.15);line-height:1;margin-bottom:1rem}
+.service-title{font-size:1.05rem;font-weight:600;margin-bottom:0.7rem}
+.service-desc{font-size:0.88rem;color:var(--mid);line-height:1.7}
+.service-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem}
+.tag{font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.25rem 0.6rem;border:1px solid var(--border);color:var(--gold);border-radius:2px}
+#planes{background:linear-gradient(180deg,var(--navy3) 0%,var(--navy) 100%)}
+.planes-header{text-align:center;margin-bottom:4rem}
+.planes-header .section-label{justify-content:center}
+.planes-header .section-label::before{display:none}
+.planes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.plan-card{background:var(--navy3);padding:2.4rem 1.8rem;transition:all 0.3s;position:relative;overflow:hidden}
+.plan-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--border);transition:background 0.3s}
+.plan-card.featured{background:var(--navy2)}
+.plan-card.featured::before{background:var(--gold)}
+.plan-card:hover::before{background:var(--gold)}
+.plan-badge{display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.2rem 0.6rem;background:var(--gold);color:var(--navy);border-radius:2px;margin-bottom:1.2rem}
+.plan-name{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;margin-bottom:0.4rem}
+.plan-tagline{font-size:0.8rem;color:var(--mid);margin-bottom:1.8rem;line-height:1.5}
+.plan-price-block{margin-bottom:1.8rem;padding-bottom:1.8rem;border-bottom:1px solid var(--border)}
+.plan-price-label{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:0.3rem}
+.plan-price-range{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--gold);line-height:1.1}
+.plan-price-sub{font-size:0.75rem;color:var(--mid);margin-top:0.3rem}
+.plan-features{list-style:none;display:flex;flex-direction:column;gap:0.7rem;margin-bottom:2rem}
+.plan-features li{font-size:0.82rem;color:rgba(255,255,255,0.75);display:flex;align-items:flex-start;gap:0.6rem;line-height:1.5}
+.plan-features li::before{content:'—';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:0.05em}
+.plan-features li.dim{color:var(--mid)}
+.plan-features li.dim::before{color:rgba(201,152,42,0.3)}
+.plan-cta{display:block;text-align:center;padding:0.75rem 1rem;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--border);color:var(--mid);transition:all 0.2s;cursor:pointer}
+.plan-cta:hover,.plan-card.featured .plan-cta{border-color:var(--gold);color:var(--gold);background:rgba(201,152,42,0.08)}
+.plan-annual{font-size:0.72rem;color:var(--mid);text-align:center;margin-top:0.8rem}
+.plan-annual strong{color:rgba(255,255,255,0.7)}
+.compare-toggle{text-align:center;margin-top:3rem}
+.compare-btn{background:none;border:1px solid var(--border);color:var(--mid);padding:0.6rem 1.6rem;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+.compare-btn:hover{border-color:var(--gold);color:var(--gold)}
+.compare-table-wrap{overflow-x:auto;margin-top:2.5rem;display:none}
+.compare-table-wrap.visible{display:block}
+.compare-table{width:100%;border-collapse:collapse;font-size:0.82rem}
+.compare-table th{background:var(--navy2);padding:0.9rem 1.2rem;text-align:left;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);border-bottom:2px solid var(--border)}
+.compare-table td{padding:0.8rem 1.2rem;border-bottom:1px solid rgba(201,152,42,0.1);color:rgba(255,255,255,0.75);vertical-align:top}
+.compare-table tr:nth-child(even) td{background:rgba(27,58,107,0.1)}
+.compare-table .check{color:var(--gold);font-weight:700}
+.compare-table .cross{color:rgba(255,255,255,0.2)}
+.compare-table .feat-name{font-weight:500;color:var(--white)}
+#proceso{background:var(--navy3)}
+.proceso-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:4rem}
+.proceso-step{padding:2rem 1.8rem;border-right:1px solid var(--border);position:relative}
+.proceso-step:last-child{border-right:none}
+.paso-num{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:700;color:rgba(201,152,42,0.1);line-height:1;margin-bottom:1rem}
+.paso-title{font-size:0.95rem;font-weight:600;margin-bottom:0.6rem;color:var(--gold)}
+.paso-desc{font-size:0.83rem;color:var(--mid);line-height:1.7}
+.paso-time{margin-top:1rem;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(201,152,42,0.5)}
+#blog{background:linear-gradient(180deg,var(--navy) 0%,var(--navy3) 100%)}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3.5rem;border:1px solid var(--border)}
+.blog-card{background:var(--navy3);padding:2rem 2.2rem;transition:background 0.3s;cursor:pointer}
+.blog-card:hover{background:rgba(27,58,107,0.3)}
+.blog-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem}
+.blog-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;line-height:1.3;margin-bottom:0.7rem}
+.blog-excerpt{font-size:0.82rem;color:var(--mid);line-height:1.7}
+.blog-date{font-size:0.7rem;color:rgba(255,255,255,0.3);margin-top:1.2rem}
+#contacto{background:var(--navy)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.contact-form{display:flex;flex-direction:column;gap:1.2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:0.4rem}
+.form-group label{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid)}
+.form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,0.04);border:1px solid var(--border);color:var(--white);padding:0.75rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.88rem;border-radius:2px;transition:border-color 0.2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group select option{background:var(--navy)}
+.form-group textarea{resize:vertical;min-height:100px}
+.contact-channels{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem}
+.channel-btn{display:flex;align-items:center;gap:1rem;padding:1rem 1.4rem;border:1px solid var(--border);border-radius:2px;transition:all 0.25s;cursor:pointer;text-decoration:none;color:var(--white)}
+.channel-btn:hover{border-color:var(--gold);background:rgba(201,152,42,0.06)}
+.channel-icon{font-size:1.4rem;flex-shrink:0}
+.channel-title{font-size:0.85rem;font-weight:600}
+.channel-sub{font-size:0.75rem;color:var(--mid);margin-top:0.1rem}
+.info-block{margin-bottom:2.5rem}
+.info-label{font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
+.info-text{font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.75)}
+.info-text strong{color:var(--white)}
+footer{background:var(--navy3);border-top:1px solid var(--border);padding:3rem 5vw 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700}
+.footer-logo span{color:var(--gold)}
+.footer-links{display:flex;gap:2rem;flex-wrap:wrap}
+.footer-links a{font-size:0.78rem;color:var(--mid);transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.25);width:100%}
+.footer-gold-line{height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:2.5rem;width:120px}
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:200;width:56px;height:56px;border-radius:50%;background:#25D366;box-shadow:0 4px 20px rgba(37,211,102,0.4);display:flex;align-items:center;justify-content:center;font-size:1.5rem;transition:transform 0.2s;cursor:pointer;text-decoration:none}
+.wa-float:hover{transform:scale(1.1)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.hero-content>*{opacity:0;animation:fadeUp 0.7s forwards}
+.hero-eyebrow{animation-delay:0.1s}.hero h1{animation-delay:0.2s}.hero-sub{animation-delay:0.3s}.hero-actions{animation-delay:0.4s}.hero-stats{animation-delay:0.5s}
+.badge-card:nth-child(1){animation:fadeIn 0.6s 0.6s both}.badge-card:nth-child(2){animation:fadeIn 0.6s 0.75s both}.badge-card:nth-child(3){animation:fadeIn 0.6s 0.9s both}
+@media(max-width:1100px){.hero-badge{display:none}.planes-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.services-grid{grid-template-columns:1fr}.planes-grid{grid-template-columns:1fr}.proceso-grid{grid-template-columns:1fr 1fr}.blog-grid{grid-template-columns:1fr}.contact-wrap{grid-template-columns:1fr;gap:3rem}.form-row{grid-template-columns:1fr}.hero h1{font-size:2.6rem}.hero-stats{gap:2rem}}
+@media(max-width:480px){section{padding:70px 5vw}.proceso-grid{grid-template-columns:1fr}.proceso-step{border-right:none;border-bottom:1px solid var(--border)}}
+</style>
+</head>
+<body class="lang-es">
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-close" onclick="closeMobileMenu()">✕</span>
+  <a href="#servicios" onclick="closeMobileMenu()"><span class="es">Servicios</span><span class="en">Services</span></a>
+  <a href="#planes" onclick="closeMobileMenu()"><span class="es">Planes</span><span class="en">Plans</span></a>
+  <a href="#proceso" onclick="closeMobileMenu()"><span class="es">Proceso</span><span class="en">Process</span></a>
+  <a href="#blog" onclick="closeMobileMenu()">Blog</a>
+  <a href="#contacto" onclick="closeMobileMenu()"><span class="es">Contacto</span><span class="en">Contact</span></a>
+</div>
+<nav id="navbar">
+  <div class="nav-logo">Arangar<span>&</span> Asociados</div>
+  <div class="nav-links">
+    <a href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a>
+    <a href="#planes"><span class="es">Planes</span><span class="en">Plans</span></a>
+    <a href="#proceso"><span class="es">Proceso</span><span class="en">Process</span></a>
+    <a href="#blog">Blog</a>
+    <a href="#contacto" class="nav-cta"><span class="es">Diagnóstico gratuito</span><span class="en">Free diagnosis</span></a>
+    <button class="lang-btn" onclick="toggleLang()">EN / ES</button>
+  </div>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <div class="hamburger" onclick="openMobileMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span class="es">Estudio Contable · Lima, Perú</span><span class="en">Accounting Firm · Lima, Peru</span></div>
+    <h1><span class="es">Contabilidad que<br><em>protege</em> su empresa.</span><span class="en">Accounting that<br><em>protects</em> your business.</span></h1>
+    <p class="hero-sub"><span class="es">Especialistas en MYPEs, holdings y empresas fintech en Lima. Cumplimiento SUNAT garantizado, EEFF con firma habilitada y asesoría tributaria que previene, no solo reporta.</span><span class="en">Specialists in SMEs, holding companies and fintech in Lima. Guaranteed SUNAT compliance, certified financial statements, and tax advisory that prevents problems — not just reports them.</span></p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-gold"><span class="es">Diagnóstico gratuito</span><span class="en">Free consultation</span></a>
+      <a href="#planes" class="btn-outline"><span class="es">Ver planes</span><span class="en">View plans</span></a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item"><div class="stat-num">4+</div><div class="stat-label"><span class="es">Años de experiencia</span><span class="en">Years experience</span></div></div>
+    <div class="stat-item"><div class="stat-num">48h</div><div class="stat-label"><span class="es">Tiempo de respuesta</span><span class="en">Response time</span></div></div>
+    <div class="stat-item"><div class="stat-num">0</div><div class="stat-label"><span class="es">Contingencias SUNAT</span><span class="en">SUNAT contingencies</span></div></div>
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label"><span class="es">Planes adaptados</span><span class="en">Tailored plans</span></div></div>
+  </div>
+  <div class="hero-badge">
+    <div class="badge-card"><div class="badge-icon">⚖️</div><div class="badge-title"><span class="es">Cumplimiento SUNAT</span><span class="en">SUNAT Compliance</span></div><div class="badge-text"><span class="es">PDT 621, PLAME, libros electrónicos PLE</span><span class="en">Monthly declarations, payroll, PLE books</span></div></div>
+    <div class="badge-card"><div class="badge-icon">📊</div><div class="badge-title"><span class="es">EEFF con firma</span><span class="en">Certified Financials</span></div><div class="badge-text"><span class="es">Para bancos, OSCE e inversionistas</span><span class="en">For banks, OSCE and investors</span></div></div>
+    <div class="badge-card"><div class="badge-icon">🏛️</div><div class="badge-title">Ecosistema ARANCORE</div><div class="badge-text"><span class="es">Respaldo institucional de holding multisectorial</span><span class="en">Backed by multisector holding structure</span></div></div>
+  </div>
+</section>
+<section id="servicios">
+  <div class="section-label"><span class="es">Lo que hacemos</span><span class="en">What we do</span></div>
+  <div class="section-title"><span class="es">Servicios que cubren cada ángulo de su empresa</span><span class="en">Services that cover every angle of your business</span></div>
+  <div class="services-grid">
+    <div class="service-item"><div class="service-num">01</div><div class="service-title"><span class="es">Contabilidad y Declaraciones</span><span class="en">Accounting & Declarations</span></div><div class="service-desc"><span class="es">PDT 621, PLAME, libros electrónicos PLE, conciliación bancaria y cierre mensual en 48 horas.</span><span class="en">Monthly tax returns, payroll, PLE electronic books, bank reconciliation and monthly close in 48 hours.</span></div><div class="service-tags"><span class="tag">SUNAT</span><span class="tag">PLE</span><span class="tag">PLAME</span></div></div>
+    <div class="service-item"><div class="service-num">02</div><div class="service-title"><span class="es">Gestión de Planilla</span><span class="en">Payroll Management</span></div><div class="service-desc"><span class="es">Cálculo de sueldos, AFP, CTS, gratificaciones, contratos laborales, boletas y liquidaciones.</span><span class="en">Salary calculation, AFP, CTS, bonuses, employment contracts, payslips and settlement.</span></div><div class="service-tags"><span class="tag">T-Registro</span><span class="tag">CTS</span><span class="tag">AFP</span></div></div>
+    <div class="service-item"><div class="service-num">03</div><div class="service-title"><span class="es">Estados Financieros</span><span class="en">Financial Statements</span></div><div class="service-desc"><span class="es">EEFF con firma habilitada para licitaciones OSCE, financiamiento bancario, socios e inversionistas.</span><span class="en">Certified financial statements for OSCE bids, bank financing, partners and investors.</span></div><div class="service-tags"><span class="tag">NIIF</span><span class="tag">OSCE</span><span class="tag">Banca</span></div></div>
+    <div class="service-item"><div class="service-num">04</div><div class="service-title"><span class="es">Asesoría Tributaria</span><span class="en">Tax Advisory</span></div><div class="service-desc"><span class="es">Diagnóstico de contingencias, estrategia de fraccionamientos, revisión de multas y optimización tributaria legal.</span><span class="en">Contingency diagnosis, installment strategy, fine review and legal tax optimization.</span></div><div class="service-tags"><span class="tag">DJ Renta</span><span class="tag">Fraccionamiento</span></div></div>
+    <div class="service-item"><div class="service-num">05</div><div class="service-title"><span class="es">Fintech y Holdings</span><span class="en">Fintech & Holdings</span></div><div class="service-desc"><span class="es">Cumplimiento SBS, UIF, PLAFT y contratos intercompany. Especialistas en estructuras de holding y precios de transferencia.</span><span class="en">SBS, UIF and PLAFT compliance. Specialists in holding structures and transfer pricing.</span></div><div class="service-tags"><span class="tag">SBS</span><span class="tag">UIF</span><span class="tag">Holdings</span></div></div>
+    <div class="service-item"><div class="service-num">06</div><div class="service-title"><span class="es">Regularización Tributaria</span><span class="en">Tax Regularization</span></div><div class="service-desc"><span class="es">Declaraciones vencidas, multas no notificadas, fraccionamientos perdidos y estrategia de recuperación.</span><span class="en">Overdue declarations, unnotified fines, lost installments and recovery strategy.</span></div><div class="service-tags"><span class="tag">Multas</span><span class="tag">Cobranza coactiva</span></div></div>
+  </div>
+</section>
+<section id="planes">
+  <div class="planes-header">
+    <div class="section-label" style="justify-content:center"><span class="es">Nuestros planes</span><span class="en">Our plans</span></div>
+    <div class="section-title"><span class="es">Encuentre el plan ideal para su empresa</span><span class="en">Find the ideal plan for your business</span></div>
+    <p class="section-sub" style="text-align:center;margin:0 auto"><span class="es">Todos los planes incluyen contador asignado, canal directo y sistema contable sin costo adicional. DJ Renta anual se factura por separado en enero-febrero.</span><span class="en">All plans include assigned accountant, direct channel and accounting system at no extra cost. Annual income tax return billed separately in January-February.</span></p>
+  </div>
+  <div class="planes-grid">
+    <div class="plan-card">
+      <div class="plan-name">Arangar<br>Starter</div>
+      <div class="plan-tagline"><span class="es">Para emprendedores y negocios en inicio</span><span class="en">For entrepreneurs and early-stage businesses</span></div>
+      <div class="plan-price-block">
+        <div class="plan-price-label"><span class="es">Honorario mensual</span><span class="en">Monthly fee</span></div>
+        <div class="plan-price-range">S/ 450 — 750</div>
+        <div class="plan-price-sub"><span class="es">Ingresos S/ 8,000–15,000/mes</span><span class="en">Revenue S/ 8,000–15,000/mo</span></div>
+      </div>
+      <ul class="plan-features">
+        <li><span class="es">PDT 621 + PLAME mensual</span><span class="en">PDT 621 + monthly PLAME</span></li>
+        <li><span class="es">Planilla hasta 3 colaboradores</span><span class="en">Payroll up to 3 employees</span></li>
+        <li><span class="es">Conciliación bancaria: 1 cuenta (soles)</span><span class="en">Bank reconciliation: 1 account</span></li>
+        <li><span class="es">Libros electrónicos: R.Compras + R.Ventas</span><span class="en">PLE books: Purchases + Sales</span></li>
+        <li><span class="es">Hasta 50 comprobantes/mes</span><span class="en">Up to 50 receipts/month</span></li>
+        <li><span class="es">Régimen RER o MYPE Tributario</span><span class="en">RER or MYPE Tax regime</span></li>
+        <li class="dim"><span class="es">Reportes financieros intermedios</span><span class="en">Interim financial reports</span></li>
+        <li class="dim"><span class="es">Diagnóstico trimestral</span><span class="en">Quarterly diagnosis</span></li>
+      </ul>
+      <a href="#contacto" class="plan-cta"><span class="es">Solicitar plan</span><span class="en">Request plan</span></a>
+      <div class="plan-annual"><span class="es">DJ Renta anual adicional: <strong>S/ 450–600</strong></span><span class="en">Annual return additional fee: <strong>S/ 450–600</strong></span></div>
+    </div>
+    <div class="plan-card">
+      <div class="plan-name">Arangar<br>Growth</div>
+      <div class="plan-tagline"><span class="es">Para microempresas en crecimiento activo</span><span class="en">For microenterprises in active growth</span></div>
+      <div class="plan-price-block">
+        <div class="plan-price-label"><span class="es">Honorario mensual</span><span class="en">Monthly fee</span></div>
+        <div class="plan-price-range">S/ 800 — 1,200</div>
+        <div class="plan-price-sub"><span class="es">Ingresos S/ 15,000–40,000/mes</span><span class="en">Revenue S/ 15,000–40,000/mo</span></div>
+      </div>
+      <ul class="plan-features">
+        <li><span class="es">Todo lo del plan Starter</span><span class="en">Everything in Starter</span></li>
+        <li><span class="es">Planilla hasta 5 colaboradores</span><span class="en">Payroll up to 5 employees</span></li>
+        <li><span class="es">Conciliación 2 cuentas (máx. 1 USD)</span><span class="en">Reconciliation 2 accounts (max 1 USD)</span></li>
+        <li><span class="es">Hasta 100 comprobantes/mes</span><span class="en">Up to 100 receipts/month</span></li>
+        <li><span class="es">1 presentación EEFF intermedia/año</span><span class="en">1 interim financial report/year</span></li>
+        <li><span class="es">Reportes: CxC, CxP, flujo de caja</span><span class="en">Reports: AR, AP, cash flow</span></li>
+        <li class="dim"><span class="es">Contratos laborales completos</span><span class="en">Full employment contracts</span></li>
+        <li class="dim"><span class="es">Regularización tributaria</span><span class="en">Tax regularization</span></li>
+      </ul>
+      <a href="#contacto" class="plan-cta"><span class="es">Solicitar plan</span><span class="en">Request plan</span></a>
+      <div class="plan-annual"><span class="es">DJ Renta anual adicional: <strong>S/ 800–1,000</strong></span><span class="en">Annual return additional fee: <strong>S/ 800–1,000</strong></span></div>
+    </div>
+    <div class="plan-card featured">
+      <div class="plan-badge"><span class="es">Más popular</span><span class="en">Most popular</span></div>
+      <div class="plan-name">Arangar<br>Pro</div>
+      <div class="plan-tagline"><span class="es">Para pequeñas empresas consolidadas</span><span class="en">For established small businesses</span></div>
+      <div class="plan-price-block">
+        <div class="plan-price-label"><span class="es">Honorario mensual</span><span class="en">Monthly fee</span></div>
+        <div class="plan-price-range">S/ 1,200 — 2,000</div>
+        <div class="plan-price-sub"><span class="es">Ingresos S/ 40,000–65,000/mes</span><span class="en">Revenue S/ 40,000–65,000/mo</span></div>
+      </div>
+      <ul class="plan-features">
+        <li><span class="es">Todo lo del plan Growth</span><span class="en">Everything in Growth</span></li>
+        <li><span class="es">Planilla hasta 10 colaboradores</span><span class="en">Payroll up to 10 employees</span></li>
+        <li><span class="es">Conciliación 3 cuentas (máx. 1 USD)</span><span class="en">Reconciliation 3 accounts</span></li>
+        <li><span class="es">Hasta 200 comprobantes/mes</span><span class="en">Up to 200 receipts/month</span></li>
+        <li><span class="es">2 presentaciones EEFF/año</span><span class="en">2 financial reports/year</span></li>
+        <li><span class="es">Contratos laborales y adendas completos</span><span class="en">Full employment contracts & addenda</span></li>
+        <li><span class="es">Implementación en sistema contable</span><span class="en">Accounting system setup</span></li>
+        <li><span class="es">Diagnóstico trimestral de salud financiera</span><span class="en">Quarterly financial health diagnosis</span></li>
+      </ul>
+      <a href="#contacto" class="plan-cta"><span class="es">Solicitar plan</span><span class="en">Request plan</span></a>
+      <div class="plan-annual"><span class="es">DJ Renta anual adicional: <strong>S/ 1,200–1,700</strong></span><span class="en">Annual return additional fee: <strong>S/ 1,200–1,700</strong></span></div>
+    </div>
+    <div class="plan-card">
+      <div class="plan-name">Arangar<br>Premium</div>
+      <div class="plan-tagline"><span class="es">Para MYPEs avanzadas con alta exigencia</span><span class="en">For advanced SMEs with high demands</span></div>
+      <div class="plan-price-block">
+        <div class="plan-price-label"><span class="es">Honorario mensual</span><span class="en">Monthly fee</span></div>
+        <div class="plan-price-range">S/ 2,000 — 3,500</div>
+        <div class="plan-price-sub"><span class="es">Ingresos S/ 65,000–100,000/mes</span><span class="en">Revenue S/ 65,000–100,000/mo</span></div>
+      </div>
+      <ul class="plan-features">
+        <li><span class="es">Todo lo del plan Pro</span><span class="en">Everything in Pro</span></li>
+        <li><span class="es">Planilla hasta 20 colaboradores</span><span class="en">Payroll up to 20 employees</span></li>
+        <li><span class="es">Conciliación 4 cuentas (máx. 1 USD)</span><span class="en">Reconciliation 4 accounts</span></li>
+        <li><span class="es">Hasta 300 comprobantes/mes</span><span class="en">Up to 300 receipts/month</span></li>
+        <li><span class="es">3 presentaciones EEFF/año</span><span class="en">3 financial reports/year</span></li>
+        <li><span class="es">Regularización tributaria completa</span><span class="en">Full tax regularization</span></li>
+        <li><span class="es">Asesoría estratégica tributaria incluida</span><span class="en">Strategic tax advisory included</span></li>
+        <li><span class="es">Evaluación de multas y fraccionamientos</span><span class="en">Fine and installment evaluation</span></li>
+      </ul>
+      <a href="#contacto" class="plan-cta"><span class="es">Solicitar plan</span><span class="en">Request plan</span></a>
+      <div class="plan-annual"><span class="es">DJ Renta anual adicional: <strong>S/ 2,000–2,500</strong></span><span class="en">Annual return additional fee: <strong>S/ 2,000–2,500</strong></span></div>
+    </div>
+  </div>
+  <div class="compare-toggle">
+    <button class="compare-btn" onclick="toggleCompare()"><span class="es">Ver tabla comparativa completa</span><span class="en">View full comparison table</span></button>
+  </div>
+  <div class="compare-table-wrap" id="compareTable">
+    <table class="compare-table">
+      <thead><tr><th style="width:32%"><span class="es">Característica</span><span class="en">Feature</span></th><th>Starter</th><th>Growth</th><th>Pro</th><th>Premium</th></tr></thead>
+      <tbody>
+        <tr><td class="feat-name"><span class="es">Honorario mensual</span><span class="en">Monthly fee</span></td><td>S/ 450–750</td><td>S/ 800–1,200</td><td>S/ 1,200–2,000</td><td>S/ 2,000–3,500</td></tr>
+        <tr><td class="feat-name"><span class="es">Comprobantes/mes</span><span class="en">Receipts/month</span></td><td>Hasta 50</td><td>Hasta 100</td><td>Hasta 200</td><td>Hasta 300</td></tr>
+        <tr><td class="feat-name"><span class="es">Trabajadores en planilla</span><span class="en">Payroll employees</span></td><td>Hasta 3</td><td>Hasta 5</td><td>Hasta 10</td><td>Hasta 20</td></tr>
+        <tr><td class="feat-name"><span class="es">Cuentas bancarias</span><span class="en">Bank accounts</span></td><td>1 soles</td><td>2 (máx.1 USD)</td><td>3 (máx.1 USD)</td><td>4 (máx.1 USD)</td></tr>
+        <tr><td class="feat-name">PDT 621 + PLAME</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+        <tr><td class="feat-name"><span class="es">Libros electrónicos PLE</span><span class="en">PLE electronic books</span></td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+        <tr><td class="feat-name"><span class="es">Reportes CxC, CxP, flujo de caja</span><span class="en">AR, AP, cash flow reports</span></td><td class="cross">—</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+        <tr><td class="feat-name"><span class="es">Presentaciones EEFF intermedias</span><span class="en">Interim financial reports</span></td><td class="cross">—</td><td>1/año</td><td>2/año</td><td>3/año</td></tr>
+        <tr><td class="feat-name"><span class="es">Contratos laborales y adendas</span><span class="en">Employment contracts</span></td><td class="cross">—</td><td class="cross">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+        <tr><td class="feat-name"><span class="es">Sistema contable (implementación)</span><span class="en">Accounting system setup</span></td><td class="cross">—</td><td class="cross">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+        <tr><td class="feat-name"><span class="es">Diagnóstico trimestral financiero</span><span class="en">Quarterly financial diagnosis</span></td><td class="cross">—</td><td class="cross">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+        <tr><td class="feat-name"><span class="es">Regularización tributaria</span><span class="en">Tax regularization</span></td><td class="cross">—</td><td class="cross">—</td><td class="cross">—</td><td class="check">✓</td></tr>
+        <tr><td class="feat-name"><span class="es">Asesoría estratégica tributaria</span><span class="en">Strategic tax advisory</span></td><td class="cross">—</td><td class="cross">—</td><td class="cross">—</td><td class="check">✓</td></tr>
+        <tr><td class="feat-name"><span class="es">DJ Renta anual (honorario adicional)</span><span class="en">Annual income tax (additional)</span></td><td>S/ 450–600</td><td>S/ 800–1,000</td><td>S/ 1,200–1,700</td><td>S/ 2,000–2,500</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section id="proceso">
+  <div class="section-label"><span class="es">Cómo trabajamos</span><span class="en">How we work</span></div>
+  <div class="section-title"><span class="es">De la primera llamada al contrato firmado en 4 pasos</span><span class="en">From first call to signed contract in 4 steps</span></div>
+  <div class="proceso-grid">
+    <div class="proceso-step"><div class="paso-num">01</div><div class="paso-title"><span class="es">Diagnóstico gratuito</span><span class="en">Free diagnosis</span></div><div class="paso-desc"><span class="es">Revisamos su RUC, régimen, fraccionamientos pendientes y vencimientos. Sin costo ni compromiso.</span><span class="en">We review your RUC, tax regime, pending installments and deadlines. No cost or commitment.</span></div><div class="paso-time">30 min</div></div>
+    <div class="proceso-step"><div class="paso-num">02</div><div class="paso-title"><span class="es">Propuesta personalizada</span><span class="en">Custom proposal</span></div><div class="paso-desc"><span class="es">Enviamos propuesta en PDF en 24 horas con el plan recomendado, cronograma y desglose de servicios.</span><span class="en">We send a PDF proposal within 24 hours with the recommended plan, schedule and service breakdown.</span></div><div class="paso-time">24h</div></div>
+    <div class="proceso-step"><div class="paso-num">03</div><div class="paso-title"><span class="es">Firma de contrato</span><span class="en">Contract signing</span></div><div class="paso-desc"><span class="es">Contrato institucional claro, sin letra pequeña. Define exactamente qué incluye y qué no.</span><span class="en">Clear institutional contract, no fine print. Defines exactly what's included and what's not.</span></div><div class="paso-time"><span class="es">Día 3–5</span><span class="en">Day 3–5</span></div></div>
+    <div class="proceso-step"><div class="paso-num">04</div><div class="paso-title"><span class="es">Onboarding y activación</span><span class="en">Onboarding & activation</span></div><div class="paso-desc"><span class="es">Reunión de onboarding, configuración en sistema, contador asignado y primer cierre mensual.</span><span class="en">Onboarding meeting, system setup, accountant assignment and first monthly close.</span></div><div class="paso-time"><span class="es">Semana 1</span><span class="en">Week 1</span></div></div>
+  </div>
+</section>
+<section id="blog">
+  <div class="section-label">Blog</div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
+    <div class="section-title"><span class="es">Recursos tributarios para su empresa</span><span class="en">Tax resources for your business</span></div>
+    <a href="#contacto" class="btn-outline" style="white-space:nowrap;margin-bottom:1.2rem"><span class="es">Ver todos</span><span class="en">View all</span></a>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card"><div class="blog-tag">SUNAT · <span class="es">Tributario</span><span class="en">Tax</span></div><div class="blog-title"><span class="es">¿Qué pasa si no presentas tu PDT 621 a tiempo? Las multas que no te cuentan</span><span class="en">What happens if you miss your PDT 621? The fines no one tells you about</span></div><div class="blog-excerpt"><span class="es">La multa por no presentar equivale al 50% de la UIT. Pero hay una multa adicional que muy pocos contadores mencionan proactivamente...</span><span class="en">The fine for non-filing equals 50% of UIT. But there's an additional fine that very few accountants proactively mention...</span></div><div class="blog-date"><span class="es">Marzo 2026</span><span class="en">March 2026</span></div></div>
+    <div class="blog-card"><div class="blog-tag"><span class="es">Planilla</span><span class="en">Payroll</span></div><div class="blog-title"><span class="es">Gratificaciones 2026: cómo calcularlas correctamente y cuándo pagarlas</span><span class="en">2026 bonuses: how to calculate them correctly and when to pay</span></div><div class="blog-excerpt"><span class="es">Julio y diciembre son los meses críticos. Una gratificación mal calculada puede derivar en una demanda laboral costosa...</span><span class="en">July and December are critical months. A miscalculated bonus can lead to an expensive labor lawsuit...</span></div><div class="blog-date"><span class="es">Febrero 2026</span><span class="en">February 2026</span></div></div>
+    <div class="blog-card"><div class="blog-tag"><span class="es">Régimen Tributario</span><span class="en">Tax Regime</span></div><div class="blog-title"><span class="es">RER vs. MYPE Tributario: cuál le conviene más según sus ingresos reales</span><span class="en">RER vs. MYPE Tax: which is better for your actual revenue</span></div><div class="blog-excerpt"><span class="es">La diferencia entre pagar 1.5% y 10% sobre renta neta puede ser la decisión más importante del año para su empresa...</span><span class="en">The difference between paying 1.5% and 10% on net income can be the most important decision of the year...</span></div><div class="blog-date"><span class="es">Enero 2026</span><span class="en">January 2026</span></div></div>
+  </div>
+</section>
+<section id="contacto">
+  <div class="section-label"><span class="es">Contáctenos</span><span class="en">Contact us</span></div>
+  <div class="section-title"><span class="es">Solicite su diagnóstico gratuito ahora</span><span class="en">Request your free diagnosis now</span></div>
+  <div class="contact-wrap" style="margin-top:3.5rem">
+    <div>
+      <form class="contact-form" onsubmit="handleForm(event)">
+        <div class="form-row">
+          <div class="form-group"><label><span class="es">Nombre completo</span><span class="en">Full name</span></label><input type="text" placeholder="Ej. María García" required></div>
+          <div class="form-group"><label><span class="es">Empresa / RUC</span><span class="en">Company / RUC</span></label><input type="text" placeholder="Mi Empresa S.A.C. / 20xxxxxxxxx"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Email</label><input type="email" placeholder="correo@empresa.com" required></div>
+          <div class="form-group"><label><span class="es">Teléfono / WhatsApp</span><span class="en">Phone / WhatsApp</span></label><input type="tel" placeholder="+51 9xx xxx xxx"></div>
+        </div>
+        <div class="form-group"><label><span class="es">Plan de interés</span><span class="en">Plan of interest</span></label>
+          <select><option value=""><span class="es">Seleccione un plan</span><span class="en">Select a plan</span></option><option>Arangar Starter</option><option>Arangar Growth</option><option>Arangar Pro</option><option>Arangar Premium</option><option><span class="es">No sé — quiero orientación</span><span class="en">Not sure — need guidance</span></option></select>
+        </div>
+        <div class="form-group"><label><span class="es">Ingresos mensuales aproximados</span><span class="en">Approximate monthly revenue</span></label>
+          <select><option value=""><span class="es">Seleccione un rango</span><span class="en">Select a range</span></option><option>Hasta S/ 15,000</option><option>S/ 15,000 — S/ 40,000</option><option>S/ 40,000 — S/ 65,000</option><option>S/ 65,000 — S/ 100,000</option><option><span class="es">Más de S/ 100,000</span><span class="en">More than S/ 100,000</span></option></select>
+        </div>
+        <div class="form-group"><label><span class="es">Mensaje (opcional)</span><span class="en">Message (optional)</span></label><textarea placeholder="Cuéntenos brevemente su situación tributaria actual..."></textarea></div>
+        <button type="submit" class="btn-gold" style="align-self:flex-start"><span class="es">Solicitar diagnóstico gratuito</span><span class="en">Request free diagnosis</span></button>
+      </form>
+      <div id="formSuccess" style="display:none;margin-top:1.5rem;padding:1.2rem 1.6rem;border:1px solid var(--gold);border-radius:2px;background:rgba(201,152,42,0.08)">
+        <div style="color:var(--gold);font-weight:600;margin-bottom:0.4rem"><span class="es">✓ Mensaje enviado</span><span class="en">✓ Message sent</span></div>
+        <div style="font-size:0.85rem;color:var(--mid)"><span class="es">Nos pondremos en contacto dentro de las próximas 24 horas.</span><span class="en">We will get in touch within the next 24 hours.</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="info-block">
+        <div class="info-label"><span class="es">Canales directos</span><span class="en">Direct channels</span></div>
+        <div class="contact-channels">
+          <a href="https://wa.me/51999999999?text=Hola,%20quisiera%20un%20diagnóstico%20gratuito" class="channel-btn" target="_blank"><div class="channel-icon">💬</div><div><div class="channel-title">WhatsApp Business</div><div class="channel-sub"><span class="es">Respuesta inmediata en horario laboral</span><span class="en">Immediate response during business hours</span></div></div></a>
+          <a href="https://calendly.com/arangar" class="channel-btn" target="_blank"><div class="channel-icon">📅</div><div><div class="channel-title">Calendly</div><div class="channel-sub"><span class="es">Agendar llamada de diagnóstico gratuita</span><span class="en">Schedule free diagnosis call</span></div></div></a>
+          <a href="mailto:contacto@arangar.pe" class="channel-btn"><div class="channel-icon">✉️</div><div><div class="channel-title">contacto@arangar.pe</div><div class="channel-sub"><span class="es">Para propuestas formales y documentos</span><span class="en">For formal proposals and documents</span></div></div></a>
+        </div>
+      </div>
+      <div class="info-block"><div class="info-label"><span class="es">Horario</span><span class="en">Hours</span></div><div class="info-text"><strong><span class="es">Lunes a Viernes</span><span class="en">Monday to Friday</span></strong><br>8:30 am — 6:00 pm<br><br><strong><span class="es">Sábados</span><span class="en">Saturdays</span></strong><br>9:00 am — 1:00 pm</div></div>
+      <div class="info-block"><div class="info-label"><span class="es">Ubicación</span><span class="en">Location</span></div><div class="info-text"><strong>Lima, Perú</strong><br>San Isidro — Lima Metropolitana</div></div>
+      <div class="info-block"><div class="info-label"><span class="es">Parte del ecosistema</span><span class="en">Part of the ecosystem</span></div><div class="info-text" style="font-size:0.82rem"><span class="es">Arangar & Asociados es la unidad contable-fiscal del Ecosistema <strong>ARANCORE</strong> — holding multisectorial con presencia en tecnología, educación, movilidad y energía en Perú.</span><span class="en">Arangar & Asociados is the accounting-fiscal unit of the <strong>ARANCORE</strong> Ecosystem — a multisector holding active in technology, education, mobility and energy in Peru.</span></div></div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div><div class="footer-gold-line"></div><div class="footer-logo">Arangar<span>&</span> Asociados</div><div style="font-size:0.75rem;color:var(--mid);margin-top:0.4rem"><span class="es">Estudio Contable · Lima, Perú</span><span class="en">Accounting Firm · Lima, Peru</span></div></div>
+  <div class="footer-links"><a href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a><a href="#planes"><span class="es">Planes</span><span class="en">Plans</span></a><a href="#proceso"><span class="es">Proceso</span><span class="en">Process</span></a><a href="#blog">Blog</a><a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a></div>
+  <div class="footer-copy">© 2026 Arangar & Asociados S.A.C. · RUC 20606685093 · Lima, Perú · arangar.pe · <span class="es">Parte del Ecosistema</span><span class="en">Part of the</span> ARANCORE</div>
+</footer>
+<a href="https://wa.me/51999999999?text=Hola,%20información%20sobre%20planes%20Arangar" class="wa-float" target="_blank">💬</a>
+<script>
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60));
+let lang='es';
+function toggleLang(){lang=lang==='es'?'en':'es';document.body.className='lang-'+lang;document.documentElement.lang=lang;}
+function toggleCompare(){const t=document.getElementById('compareTable');t.classList.toggle('visible');document.querySelector('.compare-btn').innerHTML=t.classList.contains('visible')?'<span class="es">Ocultar tabla</span><span class="en">Hide table</span>':'<span class="es">Ver tabla comparativa completa</span><span class="en">View full comparison table</span>';}
+function handleForm(e){e.preventDefault();document.querySelector('.contact-form').style.display='none';document.getElementById('formSuccess').style.display='block';}
+function openMobileMenu(){document.getElementById('mobileMenu').classList.add('open');}
+function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.style.opacity='1';}),{threshold:0.1});
+document.querySelectorAll('.service-item,.plan-card,.proceso-step,.blog-card').forEach(el=>{el.style.opacity='0';el.style.transition='opacity 0.5s ease';obs.observe(el);});
+</script>
+</body>
+</html>
