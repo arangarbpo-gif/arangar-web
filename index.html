@@ -371,20 +371,20 @@ footer{background:var(--navy3);border-top:1px solid var(--border);padding:3rem 5
     <div>
       <form class="contact-form" onsubmit="handleForm(event)">
         <div class="form-row">
-          <div class="form-group"><label><span class="es">Nombre completo</span><span class="en">Full name</span></label><input type="text" placeholder="Ej. María García" required></div>
-          <div class="form-group"><label><span class="es">Empresa / RUC</span><span class="en">Company / RUC</span></label><input type="text" placeholder="Mi Empresa S.A.C. / 20xxxxxxxxx"></div>
+          <div class="form-group"><label><span class="es">Nombre completo</span><span class="en">Full name</span></label><input type="text" name="nombre" placeholder="Gerente General" required></div>
+          <div class="form-group"><label><span class="es">Empresa / RUC</span><span class="en">Company / RUC</span></label><input type="text" name="ruc_empresa" placeholder="20XXXXXXXXX"></div>
         </div>
         <div class="form-row">
-          <div class="form-group"><label>Email</label><input type="email" placeholder="correo@empresa.com" required></div>
-          <div class="form-group"><label><span class="es">Teléfono / WhatsApp</span><span class="en">Phone / WhatsApp</span></label><input type="tel" placeholder="+51 9xx xxx xxx"></div>
+          <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="gerencia@empresa.com" required></div>
+          <div class="form-group"><label><span class="es">Teléfono / WhatsApp</span><span class="en">Phone / WhatsApp</span></label><input type="tel" name="telefono" placeholder="+51 9XX XXX XXX"></div>
         </div>
         <div class="form-group"><label><span class="es">Plan de interés</span><span class="en">Plan of interest</span></label>
-          <select><option value=""><span class="es">Seleccione un plan</span><span class="en">Select a plan</span></option><option>Arangar Starter</option><option>Arangar Growth</option><option>Arangar Pro</option><option>Arangar Premium</option><option><span class="es">No sé — quiero orientación</span><span class="en">Not sure — need guidance</span></option></select>
+          <select name="plan"><option value=""><span class="es">Seleccione un plan</span><span class="en">Select a plan</span></option><option>Arangar Starter</option><option>Arangar Growth</option><option>Arangar Pro</option><option>Arangar Premium</option><option><span class="es">No sé — quiero orientación</span><span class="en">Not sure — need guidance</span></option></select>
         </div>
         <div class="form-group"><label><span class="es">Ingresos mensuales aproximados</span><span class="en">Approximate monthly revenue</span></label>
           <select><option value=""><span class="es">Seleccione un rango</span><span class="en">Select a range</span></option><option>Hasta S/ 15,000</option><option>S/ 15,000 — S/ 40,000</option><option>S/ 40,000 — S/ 65,000</option><option>S/ 65,000 — S/ 100,000</option><option><span class="es">Más de S/ 100,000</span><span class="en">More than S/ 100,000</span></option></select>
         </div>
-        <form class="contact-form" action="https://formspree.io/f/mkoqzlaq" method="POST"><label><span class="es">Mensaje (opcional)</span><span class="en">Message (optional)</span></label><textarea placeholder="Cuéntenos brevemente su situación tributaria actual..."></textarea></div>
+        <form class="contact-form" action="https://formspree.io/f/mkoqzlaq" method="POST"><label><span class="es">Mensaje (opcional)</span><span class="en">Message (optional)</span></label><textarea name="mensaje" placeholder="Cuéntenos brevemente su situación tributaria actual..."></textarea></div>
         <button type="submit" class="btn-gold" style="align-self:flex-start"><span class="es">Solicitar diagnóstico gratuito</span><span class="en">Request free diagnosis</span></button>
       </form>
       <div id="formSuccess" style="display:none;margin-top:1.5rem;padding:1.2rem 1.6rem;border:1px solid var(--gold);border-radius:2px;background:rgba(201,152,42,0.08)">
@@ -399,7 +399,7 @@ footer{background:var(--navy3);border-top:1px solid var(--border);padding:3rem 5
           <a href="https://wa.me/51950913859?text=Hola,%20quisiera%20un%20diagnóstico%20gratuito" class="channel-btn" target="_blank"><div class="channel-icon">💬</div><div><div class="channel-title">WhatsApp Business</div><div class="channel-sub"><span class="es">Respuesta inmediata en horario laboral</span><span class="en">Immediate response during business hours</span></div></div></a>
           <a href="https://calendly.com/arangar-info" class="channel-btn" target="_blank"><div class="channel-icon">📅</div><div><div class="channel-title">Calendly</div><div class="channel-sub"><span class="es">Agendar llamada de diagnóstico gratuita</span><span class="en">Schedule free diagnosis call</span></div></div></a>
           <a href="mailto:info@arangar.pe" class="channel-btn"><div class="channel-icon">✉️</div><div><div class="channel-title">info@arangar.pe</div><div class="channel-sub"><span class="es">Para propuestas formales y documentos</span><span class="en">For formal proposals and documents</span></div></div></a>
-        </div>
+        </form>
       </div>
       <div class="info-block"><div class="info-label"><span class="es">Horario</span><span class="en">Hours</span></div><div class="info-text"><strong><span class="es">Lunes a Viernes</span><span class="en">Monday to Friday</span></strong><br>8:30 am — 6:00 pm<br><br><strong><span class="es">Sábados</span><span class="en">Saturdays</span></strong><br>9:00 am — 1:00 pm</div></div>
       <div class="info-block"><div class="info-label"><span class="es">Ubicación</span><span class="en">Location</span></div><div class="info-text"><strong>Lima, Perú</strong><br>Lima Metropolitana</div></div>
